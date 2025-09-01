@@ -1,0 +1,307 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background-color: #000;
+    color: #fff;
+    /* background-size: 100% 100%;
+    background-image: linear-gradient(to top right, #817676, #917878, #aa9b9b, #cfcaca); */
+}
+
+button {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: #bcbebf; /*Hover color #2e2f2f*/
+    transition: all 0.5s ease-in-out;
+}
+
+button:focus{
+    background-color: #004a77;
+    color: #7bc0e6;
+}
+
+
+
+ /*Header*/
+.upper-info{
+    position: relative;
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-link {
+    text-decoration: none;
+    color: #fff;
+    transition: transform 0.3s ease-in-out;
+}
+
+.home-link:hover{
+    transform: scale(1.03);
+}
+
+.title{
+    cursor: pointer;
+    position: relative;
+    font-size: 2.5rem;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    animation: appear 1s ease-in-out;
+}
+
+/*Body*/
+
+.main-section{
+    position: relative;
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/*Photos Section*/
+.photos-section{
+    position: relative;
+    width: 82%;
+    height: 80vh;
+    border-radius: 10px;
+    background-color: #121315;
+}
+
+.photo-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+img {
+    width: 100%;
+    margin-bottom: 1em;
+    border-radius: 10px;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.03);
+}
+
+.photos-section{
+    overflow: hidden;
+    overflow-y: auto; /*Appear scrollbar when needed*/
+    scrollbar-width: none;
+    padding: 10px;
+
+    /*Make the gradient take the color of black*/   
+
+    mask-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.3),
+        rgb(0, 0, 0) 5%,
+        rgb(0, 0, 0) 95%,
+        rgba(0, 0, 0, 0.3) 100%
+    );
+}
+
+.photos-section::-webkit-scrollbar{
+    display: none;
+}
+
+.photos-container{
+    columns:300px ;
+    animation: appear 1.5s ease-in-out;
+}
+
+/*Aside Decoration*/
+.sidebar{
+    position: relative;
+    width: 15vw;
+    height: 80vh;
+    background-color: #1e1e21;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+/*Sidebar Options*/
+.sidebar-containers{
+    width: 90%;
+    height: 50px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding-left: 25px;
+    gap: 12px;
+    animation: appear 1.5s ease-in-out;
+    font-weight: 600;
+}
+
+
+
+.progress-bar{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.8rem;
+    color: #bcbebf;
+    animation: appear 1.5s ease-in-out;
+    margin-top: 5px;
+}
+
+.progress {
+    width: 100%;
+    height: 5px;
+    border-radius: 10px;
+    overflow: hidden;
+    appearance: none;
+    margin-bottom: 10px;
+}
+
+.progress::-webkit-progress-bar {
+    background-color: #2e2f2f;
+    border-radius: 10px;
+}
+.progress::-webkit-progress-value {
+    background-color: #a8c7fa;
+    border-radius: 10px;
+}
+
+.sidebar-containers:nth-child(1){
+    margin-top: 25px;
+}
+
+/*Separation content*/
+
+.separation-content{
+    width: 90%;
+    height: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #bcbebf;
+    margin-top: 40px;
+    padding-left: 25px;
+    animation: appear 1.5s ease-in-out;
+}
+
+/*Secundary sidebar*/
+.secundary-sidebar-container{
+    width: 15vw;
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 2px solid #2e2f2f;
+    margin-bottom: 30px;
+    animation: appear 1.5s ease-in-out;
+    overflow: hidden;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #555 #222;
+}
+
+/*Aside scrollbar*/
+
+.secundary-sidebar-container::-webkit-scrollbar{
+    width: 6px;
+}
+
+.secundary-sidebar-container::-webkit-scrollbar-track{
+    background: #222;
+    border-radius: 10px;
+}
+
+.secundary-sidebar-container::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 10px;
+}
+
+.secundary-sidebar-container::-webkit-scrollbar-thumb:hover{
+    background: #777 ;
+}
+
+/*Secundary sidebar options*/
+
+.secundary-sidebar{
+    width: 90%;
+    min-height: 50px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding-left: 25px;
+    gap: 12px;
+    font-weight: 600;
+}
+
+:is(.sidebar-containers, .secundary-sidebar):hover{ /*With this property affect whatever class u want to modify*/
+    background-color: #2e2e2e;
+    scale: 1.05 ;
+}
+
+/*Footer*/
+.lower-info{
+    position: relative;
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: appear 2s ease-in-out;
+}
+
+.lowerInfo-container {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+
+/*Animation Appear*/
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*Responsive*/
+@media screen and (max-width: 1008px) {
+    .main-section{
+    display: flex;   
+    }
+    .photos-section{
+        flex-grow: 1;
+        margin: 5px;
+    }
+    .sidebar{
+        width: 8vw;
+        margin-left: 5px;
+    }
+}
+
+/* @media screen (width >= 600px) and
+(width <= 1000px){
+    body {
+        background-color: #000;
+    }
+} */
