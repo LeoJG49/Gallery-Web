@@ -4,8 +4,6 @@
     box-sizing: border-box;
 }
 
-/*Body Style*/
-
 body {
     width: 100vw;
     height: 100vh;
@@ -25,7 +23,7 @@ button {
     transition: all 0.5s ease-in-out;
 }
 
-button:focus{
+button.active{
     background-color: #004a77;
     color: #7bc0e6;
 }
@@ -156,6 +154,7 @@ img:hover {
 
 
 
+
 .progress-bar{
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -254,6 +253,19 @@ img:hover {
 :is(.sidebar-containers, .secundary-sidebar):hover{ /*With this property affect whatever class u want to modify*/
     background-color: #2e2e2e;
     scale: 1.05 ;
+}
+
+.news-content {
+    padding: 2em;
+    color: #7bc0e6;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.news-content h2 {
+    margin-bottom: 1em;
+    font-size: 2rem;
+}
+.news-content ul {
+    list-style: disc inside;
 }
 
 /*Footer*/
