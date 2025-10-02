@@ -16,7 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
             section.className = "photos-section secondary-screen";
             section.id = `${btn.id}-screen`;
             section.style.display = "none";
-            section.innerHTML = `<div style="display:flex;justify-content:center;align-items:center;height:100%;font-size:2rem;color:#bcbebf;">${btn.textContent.trim()} Content</div>`;
+            section.innerHTML = `
+            <div style="display:flex;justify-content:center;align-items:center;height:100%;font-size:2rem;color:#bcbebf;
+            ">${btn.textContent.trim()} Content</div>`;
             mainSection.appendChild(section);
         }
     });
@@ -53,10 +55,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // Set "photos-view" as active on load
     const photosBtn = document.getElementById("photos-view");
     if (photosBtn) photosBtn.classList.add("active");
-});// ...existing code...
+});
 
 document.addEventListener("DOMContentLoaded", () => {
-    // ...existing code...
+ 
 
     // After all sections are created, add custom content to News
     const newsSection = document.getElementById("news-view-screen");
@@ -73,5 +75,5 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
     }
 
-    // ...existing code...
+
 });
