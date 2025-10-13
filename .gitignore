@@ -1,1 +1,9 @@
 .env
+#Dependencias de node
+
+node_modules/
+pnpm-lock.yaml
+
+#Archivos de entorno de desarrollo
+.vscode/ 
+.SVGs/
