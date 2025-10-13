@@ -122,7 +122,7 @@ img:hover {
 }
 
 .photos-container{
-    columns:300px ;
+    columns:300px;
     animation: appear 1.5s ease-in-out;
 }
 
@@ -152,9 +152,6 @@ img:hover {
     transition: all 0.3s ease-in-out;
 }
 
-
-
-
 .progress-bar{
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -165,7 +162,7 @@ img:hover {
 }
 
 .progress {
-    width: 100%;
+    width: 90%;
     height: 5px;
     border-radius: 10px;
     overflow: hidden;
@@ -203,12 +200,12 @@ img:hover {
 /*Secundary sidebar*/
 .secundary-sidebar-container{
     width: 15vw;
-    height: 35vh;
+    height: 25vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     border-bottom: 2px solid #2e2f2f;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     animation: appear 1.5s ease-in-out;
     overflow: hidden;
     overflow-y: auto;
@@ -255,7 +252,7 @@ img:hover {
     background-color: #2e2e2e;
     scale: 1.05 ;
 }
-
+/*JavaScript Content*/
 .news-content {
     padding: 2em;
     color: #7bc0e6;
@@ -300,23 +297,79 @@ img:hover {
 }
 
 /*Responsive*/
-@media screen and (max-width: 1008px) {
-    .main-section{
-    display: flex;   
+
+/*Responsive Breakpoints
+---
+DESKTOP 1281px - 1440px
+---
+
+---
+LAPTOPS 1025px - 1280px
+---
+
+---
+TABLETS(PORTRAIT) 601px - 768px
+TABLETS(LANDSCAPE) 769px - 1024px
+---
+
+---
+MOBILES(PORTRAIT) 320px - 480px
+MOBILES(LANDSCAPE) 481px - 600px
+---
+*/
+@media screen and (max-width: 1235px) and (min-width: 842px) {
+    .sidebar {
+        width: 22%;
     }
-    .photos-section{
-        flex-grow: 1;
-        margin: 5px;
+    .secundary-sidebar-container {
+        width: 100%;
+
+            .secundary-sidebar {
+                width: 90%;
+            }
     }
-    .sidebar{
-        width: 8vw;
-        margin-left: 5px;
+    .photos-section {
+        width: 75%;
+    }
+    .photos-container {
+        columns: 200px;
     }
 }
 
-/* @media screen (width >= 600px) and
-(width <= 1000px){
-    body {
-        background-color: #000;
+@media screen and (max-width: 841px) and (min-width: 600px) {
+    .sidebar {
+        width: 30%;
     }
-} */
+    .secundary-sidebar-container {
+        width: 100%;
+
+            .secundary-sidebar {
+                width: 90%;
+            }
+    }
+    .photos-section {
+        width: 65%;
+    }
+    .photos-container {
+        columns: 120px;
+        gap: 12px;
+    }
+}
+
+@media screen and (max-width: 599px) and (min-width: 320px) {
+    .sidebar {
+        width: 15%;
+
+            .sidebar-containers, .separation-content, .secundary-sidebar-container, .progress-bar {
+                display: none;
+            }
+    }
+    .photos-section {
+
+    }
+
+    .photos-container {
+        columns: 115px;
+        gap: 10px;
+    }
+}
