@@ -1,6 +1,6 @@
 .env
 #Archivos de sistema 
-.SVGs/
+SVGs/
 Images&Icons/
 
 #Dependencias de node
