@@ -40,6 +40,10 @@ button.active{
     align-items: center;
 }
 
+.menu {
+    display: none;
+}
+
 .home-link {
     text-decoration: none;
     color: #fff;
@@ -152,8 +156,16 @@ img:hover {
     transition: all 0.3s ease-in-out;
 }
 
+.responsive-sidebar-containers, .responsive-separation-content,
+.responsive-secundary-sidebar-container, .responsive-secundary-sidebar {
+    display: none;
+}
+
 .progress-bar{
-    text-align: center;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 0.8rem;
     color: #bcbebf;
@@ -162,11 +174,15 @@ img:hover {
 }
 
 .progress {
-    width: 90%;
+    width: 100%;
     height: 5px;
     border-radius: 10px;
     overflow: hidden;
     appearance: none;
+    margin-bottom: 10px;
+}
+
+.progress-text {
     margin-bottom: 10px;
 }
 
@@ -199,8 +215,8 @@ img:hover {
 
 /*Secundary sidebar*/
 .secundary-sidebar-container{
-    width: 15vw;
-    height: 25vh;
+    width: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -252,6 +268,8 @@ img:hover {
     background-color: #2e2e2e;
     scale: 1.05 ;
 }
+
+
 /*JavaScript Content*/
 .news-content {
     padding: 2em;
@@ -284,17 +302,6 @@ img:hover {
 }
 
 
-/*Animation Appear*/
-@keyframes appear {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
 /*Responsive*/
 
@@ -323,10 +330,10 @@ MOBILES(LANDSCAPE) 481px - 600px
     }
     .secundary-sidebar-container {
         width: 100%;
-
-            .secundary-sidebar {
-                width: 90%;
-            }
+        
+        .secundary-sidebar {
+            width: 90%;
+        }
     }
     .photos-section {
         width: 75%;
@@ -342,10 +349,10 @@ MOBILES(LANDSCAPE) 481px - 600px
     }
     .secundary-sidebar-container {
         width: 100%;
-
-            .secundary-sidebar {
-                width: 90%;
-            }
+        
+        .secundary-sidebar {
+            width: 90%;
+        }
     }
     .photos-section {
         width: 65%;
@@ -357,19 +364,115 @@ MOBILES(LANDSCAPE) 481px - 600px
 }
 
 @media screen and (max-width: 599px) and (min-width: 320px) {
+    /*Header*/
+    .menu {
+        display: block;
+        position: absolute;
+        left: 20px;
+        bottom: 10px;
+        cursor: pointer;
+    }
+
+
     .sidebar {
         width: 15%;
-
-            .sidebar-containers, .separation-content, .secundary-sidebar-container, .progress-bar {
-                display: none;
-            }
+        
+        .sidebar-containers, .separation-content, .secundary-sidebar-container, 
+        .progress-bar {
+            display: none;
+        }
+        
+        .responsive-sidebar-containers
+        {
+        width: 90%;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        animation: appear 1.5s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        }
+        
+        
+        span {
+            display: none;
+        }
+        svg {
+            width: 30px;
+            height: 30px;
+        }
     }
+    /*Secundary sidebar*/
+    .responsive-secundary-sidebar-container {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 2px solid #2e2f2f;
+        animation: appear 1.5s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        margin-bottom: 10px;
+    }
+    /*Aside scrollbar*/
+    
+    .responsive-secundary-sidebar-container::-webkit-scrollbar{
+        width: 6px;
+    }
+    
+    .responsive-secundary-sidebar-container::-webkit-scrollbar-track{
+        background: #222;
+        border-radius: 10px;
+    }
+    
+    .responsive-secundary-sidebar-container::-webkit-scrollbar-thumb {
+        background: #555;
+        border-radius: 10px;
+    }
+    
+    .responsive-secundary-sidebar-container::-webkit-scrollbar-thumb:hover{
+        background: #777 ;
+    }
+    
+    /*Secundary Responsive Sidebar*/
+    .responsive-secundary-sidebar{
+        width: 90%;
+        min-height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        font-weight: 600;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    :is(.responsive-sidebar-containers, .responsive-secundary-sidebar):hover
+    { /*With this property affect whatever class u want to modify*/
+        background-color: #2e2e2e;
+        scale: 1.05 ;
+    }
+
+    /*Photos Section*/
     .photos-section {
-
+        width: 80%;
     }
-
+    
     .photos-container {
-        columns: 115px;
+        columns: 120px;
         gap: 10px;
+    }
+}
+
+/*Animation Appear*/
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
