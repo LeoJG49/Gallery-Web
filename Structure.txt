@@ -1,9 +1,0 @@
-The main conception is a website about photos 
-
-xd
-
-First of all, we create the HTML, CSS and JavaScript files.
-
-We gotta make it resposive to all divices, at least we have to look right on whatever size.
-
-Grid could be a great option to make it resposive, but for the moment, unfortunately it's a knowlege we don't know.

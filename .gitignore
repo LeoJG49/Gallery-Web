@@ -3,9 +3,4 @@
 SVGs/
 Images&Icons/
 
-#Dependencias de node
-
-node_modules/
-pnpm-lock.yaml
-
 
