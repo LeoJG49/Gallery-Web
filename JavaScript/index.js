@@ -71,9 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <li>New albums feature released.</li>
                     <li>Storage upgrade available.</li>
                 </ul>
-            </div>
+            </div> 
         `;
     }
-
-
 });
