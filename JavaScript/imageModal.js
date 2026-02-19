@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const imgSrc = document.getElementById("modal-image").src;
             const link = document.createElement("a");
             link.href = imgSrc;
-            link.download = document.getElementById("modal-title").textContent + ".webp";
+            link.download = document.getElementById("modal-title").textContent + ".jpg";
             link.click();
         });
     }
